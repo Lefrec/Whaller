@@ -17,7 +17,7 @@ import Layout from "../layout/Layout.astro";
     <img class="w-3/5" src="/hero_img.png" alt="L'appareil Whaller" />
   </section>
   <!-- Pres -->
-  <section class="section items-center justify-center">
+  <!-- <section class="section items-center justify-center">
     <h2>Qu'est ce que Whaller</h2>
     <div class="flex gap-4">
       <img class="w-1/2 object-contain" src="/pres_img.png" alt="" />
@@ -52,6 +52,37 @@ import Layout from "../layout/Layout.astro";
         </p>
       </div>
     </div>
+  </section> -->
+  <section class="section">
+    <h2>Qu'est ce que Whaller</h2>
+    <p>
+      Flipper Zero est un appareil légal destiné à l’exploration de fréquence
+      radio, mais il peut être détourné pour réaliser des actions non autorisées
+      sur des systèmes mal protégés. Cette ambiguïté crée un vrai besoin :
+      détecter l’utilisation potentielle de ce type d’outil dans un espace
+      donné.
+    </p>
+    <img class="w-1/2 object-contain" src="/pres_img.png" alt="" />
+    <p>
+      Nous avons conçu Whaller, un dispositif compact capable d’identifier la
+      présence de signaux radio suspects associés à l’usage d’appareils de type
+      Flipper Zero. Whaller n’interfère pas avec les transmissions : il analyse,
+      alerte et aide à évaluer un risque. L’objectif est simple : fournir un
+      outil pédagogique et préventif pour comprendre, surveiller et sécuriser un
+      environnement face aux explorations radios non souhaitées.
+    </p>
+    <div class="flex gap-2 *:w-1/3">
+      <img src="/illu1.png" alt="" />
+      <img src="/illu2.png" alt="" />
+      <img src="/illu3.png" alt="" />
+    </div>
+    <p>
+      Whaller offre une approche plus transparente et responsable de la
+      cybersécurité : visualisation des détections, alertes locales, utilisation
+      dans un cadre légal et éducatif, et design volontairement proche d’un
+      outil de test classique afin de faciliter la compréhension et la
+      démonstration
+    </p>
   </section>
   <!-- Fonctionnalités -->
   <section class="section">
@@ -60,14 +91,24 @@ import Layout from "../layout/Layout.astro";
       <div class="flex flex-col gap-4 justify-center">
         <h3>Surveillance continue du spectre RF</h3>
         <p>
-          Analyse en temps réel des plages de fréquences utilisées dans
-          l’environnement proche.
+          Whaller analyse en temps réel des plages de fréquences, il balaie les
+          bandes de fréquences couramment utilisées par les appareils
+          d’exploration RF et enregistre le comportement normal du spectre.
+          Cette surveillance continue crée une base de référence qui permet
+          d’identifier et d’alerter plus facilement les variations suspectes
+          lorsqu’elles apparaissent, une fonctionnalité clé également présente
+          dans votre Whaller.
         </p>
         <p></p>
         <h3>Détection de signaux anormaux</h3>
         <p>
-          Repérage des transmissions atypiques, répétitives ou incohérentes avec
-          un environnement normal.
+          Quand un signal s’écarte du comportement normal de l’environnement,
+          Whaller le considère comme suspect. Cela peut correspondre à des
+          impulsions répétitives, des émissions courtes mais régulières, des
+          transmissions sur des bandes peu sollicitées ou tout autre
+          comportement radio non attendu et peu naturel pour un spectre
+          inoffensif. La détection repose sur l’analyse du spectre et non sur
+          l’identification d’un appareil spécifique.
         </p>
       </div>
       <img class="w-1/2 object-contain" src="/hand_img.png" alt="" />
@@ -79,14 +120,26 @@ import Layout from "../layout/Layout.astro";
       <div class="flex flex-col gap-4 justify-center">
         <h3>Possibilité de blocage et défense</h3>
         <p>
-          Activation d’une protection anti-menace dès qu’une activité suspecte
-          est détectée.
+          Lorsqu’un spectre radio malveillant est détecté, Whaller permet
+          d’activer un mode de défense destiné à bloquer les risques associés à
+          cette émission. Cette fonction enclenche une protection interne,
+          augmente le niveau de l’alerte sonore et applique des mesures de
+          sécurité adaptées. Elle ne modifie pas le spectre radio, mais aide à
+          contenir la menace en isolant les outils sensibles que l’utilisateur
+          possède face à ces émissions radios malveillantes, les protégeant de
+          l’anomalie détectée.
         </p>
         <p></p>
         <h3>Alertes locales en temps réel</h3>
         <p>
-          Activation d’une protection anti-menace dès qu’une activité suspecte
-          est détectée.
+          Dès qu’une anomalie, donc une potentielle menace est confirmée,
+          Whaller déclenche une alerte immédiate, réglée par défaut sur l’alerte
+          sonore et vibrante. Celle-ci peut être décidée par l’utilisateur sous
+          la forme d’un signal visuel sur l’écran, d’un indicateur lumineux,
+          d’un avertissement sonore ou d’un message explicatif dans l’interface.
+          L’objectif est de permettre une réaction rapide sans exiger de
+          compétences techniques avancées, tout en ayant l’avertisseur adaptée à
+          chaque personne utilisant Whaller.
         </p>
       </div>
       <img class="w-1/2 object-contain" src="/buy_img.png" alt="" />
@@ -134,5 +187,19 @@ import Layout from "../layout/Layout.astro";
       <img class="w-1/2 object-contain" src="/hero_img.png" alt="" />
     </div>
   </section>
-  <!-- <img class="fixed z-0 bottom-0 left-0 w-full object-cover" src="/floor1.png" alt=""> -->
+  <img
+    class="fixed z-0 bottom-0 left-0 w-full opacity-50"
+    src="/Floor1.png"
+    alt=""
+  />
+  <img
+    class="fixed z-0 bottom-0 left-0 w-full opacity-50"
+    src="/Floor2.png"
+    alt=""
+  />
+  <img
+    class="fixed z-0 bottom-0 left-0 w-full opacity-50"
+    src="/Floor3.png"
+    alt=""
+  />
 </Layout>
