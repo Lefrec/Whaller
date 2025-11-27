@@ -187,21 +187,9 @@ import Layout from "../layout/Layout.astro";
       <img class="w-1/2 object-contain" src="/hero_img.png" alt="" />
     </div>
   </section>
-  <img
-    class="fixed z-0 bottom-0 left-0 w-full opacity-50"
-    src="/Floor1.png"
-    alt=""
-  />
-  <img
-    class="fixed z-0 bottom-0 left-0 w-full opacity-50"
-    src="/Floor2.png"
-    alt=""
-  />
-  <img
-    class="fixed z-0 bottom-0 left-0 w-full opacity-50"
-    src="/Floor3.png"
-    alt=""
-  />
+  <img class="floor" src="/Floor1.png" alt="" />
+  <img class="floor" src="/Floor2.png" alt="" />
+  <img class="floor" src="/Floor3.png" alt="" />
   <script>
     import { gsap } from "gsap";
     import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -209,7 +197,9 @@ import Layout from "../layout/Layout.astro";
 
     gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
+    //smooth section scrolling
     let sections = gsap.utils.toArray(".section");
+    console.log(sections);
     let current = 0;
     let animating = false;
 
@@ -227,13 +217,34 @@ import Layout from "../layout/Layout.astro";
         onComplete: () => (animating = false),
       });
     }
-
+    //mouse scroll listener
     window.addEventListener("wheel", (e) => {
       if (animating || current < 0 || current >= sections.length) return;
-      if (e.deltaY > 0 && current < sections.length) current++;
-      else if (current && current > 0) current--;
-      console.log(current)
+      if (e.deltaY > 0 && current < sections.length - 1) current++;
+      else if (e.deltaY < 0 && current && current > 0) current--;
+      console.log(current);
       goToSection(current);
     });
+
+    // Listen to scroll updates to recalc current section
+    window.addEventListener("scroll", () => {
+      let scrollY = window.scrollY - 76;
+      let closestIndex = 0;
+      let smallestDiff = Infinity;
+
+      sections.forEach((section, i) => {
+        const diff = Math.abs(section.offsetTop - scrollY);
+        if (diff < smallestDiff) {
+          smallestDiff = diff;
+          closestIndex = i;
+        }
+      });
+
+      current = closestIndex;
+      console.log(current);
+    });
+
+    //parallaxe effect
+    let floors = gsap.utils.toArray(".floor");
   </script>
 </Layout>
