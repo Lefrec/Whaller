@@ -28,7 +28,7 @@
 
 @layer components {
     .section {
-        @apply flex flex-col w-2/3 gap-4 pt-10 min-h-[calc(100vh-76px)];
+        @apply flex flex-col w-2/3 gap-4 pt-10 min-h-[calc(100vh-76px)] items-center justify-center;
     }
     .btn {
         @apply  w-fit px-4 py-2 text-center rounded-full bg-white text-dark font-medium transition-colors duration-150 hover:text-dark-2!
