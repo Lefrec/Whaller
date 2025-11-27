@@ -16,7 +16,7 @@
         /* @apply border border-red-700; */
     }
     main {
-        @apply flex flex-col px-60 pt-[76px] gap-0 bg-linear-to-b from-gradient-start to-gradient-end;
+        @apply flex flex-col items-center pt-[76px] gap-0 bg-linear-to-b from-gradient-start to-gradient-end;
     }
     h2 {
         @apply font-main font-bold text-3xl uppercase text-center;
@@ -28,7 +28,7 @@
 
 @layer components {
     .section {
-        @apply flex flex-col gap-4 pt-10 min-h-[calc(100vh-76px)];
+        @apply flex flex-col w-1/2 gap-4 pt-10 min-h-[calc(100vh-76px)];
     }
     .btn {
         @apply  w-fit px-4 py-2 text-center rounded-full bg-white text-dark font-medium transition-colors duration-150 hover:text-dark-2!
