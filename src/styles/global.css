@@ -13,7 +13,7 @@
 @layer base {
     * {
         @apply text-white font-common font-normal transition-colors duration-150 z-1;
-        @apply border border-red-700;
+        /* @apply border border-red-700; */
     }
     main {
         @apply flex flex-col items-center pt-[76px] gap-[calc(100vh-76px)] bg-linear-to-b from-gradient-start to-gradient-end;

@@ -246,5 +246,48 @@ import Layout from "../layout/Layout.astro";
 
     //parallaxe effect
     let floors = gsap.utils.toArray(".floor");
+    let main = document.querySelector("main");
+
+    gsap.fromTo(
+      floors[0],
+      {
+        bottom: -100,
+      },
+      {
+        bottom: 0,
+        scrollTrigger: {
+          trigger: main,
+          scrub: true,
+        },
+      }
+    );
+
+    gsap.fromTo(
+      floors[1],
+      {
+        bottom: -400,
+      },
+      {
+        bottom: 0,
+        scrollTrigger: {
+          trigger: main,
+          scrub: true,
+        },
+      }
+    );
+
+    gsap.fromTo(
+      floors[2],
+      {
+        bottom: -800,
+      },
+      {
+        bottom: 0,
+        scrollTrigger: {
+          trigger: main,
+          scrub: true,
+        },
+      }
+    );
   </script>
 </Layout>
